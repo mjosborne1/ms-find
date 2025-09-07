@@ -56,10 +56,11 @@ def analyze_instances(instances_dir, must_support_elements):
             for element in must_support_elements:
                 element_path = element['element_path']
                 resource_type = element['structure_definition_type']
+                extension_uri = element.get('extension_uri')
                 
                 for resource in resources:
                     if resource.get('resourceType') == resource_type:
-                        if check_element_populated(resource, element_path):
+                        if check_element_populated(resource, element_path, extension_uri):
                             element['use_count'] += 1
                             logger.debug(f"Found populated element {element_path} in {resource_type}")
                             
@@ -73,7 +74,7 @@ def analyze_instances(instances_dir, must_support_elements):
     
     return must_support_elements
 
-def check_element_populated(resource, element_path):
+def check_element_populated(resource, element_path, extension_uri=None):
     """
     Check if a specific FHIR element path is populated in a resource
     Handles nested paths and extensions
@@ -98,13 +99,19 @@ def check_element_populated(resource, element_path):
             if not isinstance(extensions, list):
                 return False
                 
-            # Look for extension with matching slice name or URL
+            # Look for extension with matching URI (preferred) or slice name
             found_extension = None
             for ext in extensions:
-                if isinstance(ext, dict) and (ext.get('url', '').endswith(extension_name) or 
-                    ext.get('sliceName') == extension_name):
-                    found_extension = ext
-                    break
+                if isinstance(ext, dict):
+                    # First try to match by URI if provided
+                    if extension_uri and ext.get('url') == extension_uri:
+                        found_extension = ext
+                        break
+                    # Fall back to matching by slice name or URL ending
+                    elif (ext.get('url', '').endswith(extension_name) or 
+                          ext.get('sliceName') == extension_name):
+                        found_extension = ext
+                        break
             
             if found_extension is None:
                 return False
@@ -200,7 +207,16 @@ def parse_structure_definitions(package_paths):
                         
                         # Check if this is an extension with a slice name
                         slice_name = element.get('sliceName')
+                        extension_uri = None
+                        
                         if 'extension' in element_path and slice_name:
+                            # Extract the extension URI from the type.profile array
+                            if element.get('type'):
+                                for type_def in element['type']:
+                                    if type_def.get('code') == 'Extension' and type_def.get('profile'):
+                                        extension_uri = type_def['profile'][0]  # Take the first profile URI
+                                        break
+                            
                             # Format as ResourceType.extension:sliceName
                             base_path = element_path.split('.extension')[0]
                             element_path = f"{base_path}.extension:{slice_name}"
@@ -211,7 +227,8 @@ def parse_structure_definitions(package_paths):
                             'element_path': element_path,
                             'short_description': element_short,
                             'cardinality': cardinality,
-                            'profile_url': sd_url
+                            'profile_url': sd_url,
+                            'extension_uri': extension_uri
                         })
                         must_support_count += 1
                 
