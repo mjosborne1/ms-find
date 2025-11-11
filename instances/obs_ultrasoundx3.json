@@ -1,0 +1,590 @@
+{
+  "resourceType": "Bundle",
+  "id": "f8a84445-a141-4ac1-bb75-96827e659f0b",
+  "type": "transaction",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:0fd33659-4eb6-46cc-8fd8-055de0da66e4",
+      "resource": {
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+          ],
+          "lastUpdated": "2025-03-18T00:19:22.086042Z",
+          "versionId": "1205",
+          "extension": [
+            {
+              "url": "https://aidbox.app/ex/createdAt",
+              "valueInstant": "2025-03-06T07:44:24.116011Z"
+            }
+          ]
+        },
+        "specialty": [
+          {
+            "coding": [
+              {
+                "code": "408455009",
+                "system": "http://snomed.info/sct",
+                "display": "Interventional radiology - speciality"
+              }
+            ]
+          }
+        ],
+        "organization": {
+          "reference": "Organization/cape-jaffa-radiology"
+        },
+        "resourceType": "PractitionerRole",
+        "id": "diagnostic-parr-adelaide",
+        "code": [
+          {
+            "coding": [
+              {
+                "code": "253917",
+                "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
+                "display": "Diagnostic and Interventional Radiologist"
+              }
+            ]
+          }
+        ],
+        "identifier": [
+          {
+            "type": {
+              "text": "Medicare Provider Number",
+              "coding": [
+                {
+                  "code": "UPIN",
+                  "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203"
+                }
+              ]
+            },
+            "value": "2449911B",
+            "system": "http://ns.electronichealth.net.au/id/medicare-provider-number"
+          }
+        ],
+        "practitioner": {
+          "reference": "Practitioner/parr-adelaide"
+        },
+        "telecom": [
+          {
+            "use": "work",
+            "value": "0870103000",
+            "system": "phone"
+          },
+          {
+            "use": "work",
+            "value": "adelaide.parr@capejaffaradiology.example.net",
+            "system": "email"
+          }
+        ],
+        "location": [
+          {
+            "reference": "Location/cape-jaffa-radiology"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>PractitionerRole</h3></div>"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "PractitionerRole/diagnostic-parr-adelaide"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:88141493-73b6-41ac-9bc9-658943e2265d",
+      "request": {
+        "method": "GET",
+        "url": "Organization/back-valley-radiology"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:93746e39-ac43-4642-a175-613e955c8fd2",
+      "resource": {
+        "resourceType": "Observation",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-pregnancy-status-uv-ips"
+          ]
+        },
+        "id": "93746e39-ac43-4642-a175-613e955c8fd2",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "exam",
+                "display": "Exam"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "77386006",
+              "display": "Pregnancy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/italia-sofia-missing-birthDate"
+        },
+        "effectiveDateTime": "2025-09-08T11:32:52.645861+10:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "77386006",
+              "display": "Pregnant"
+            }
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Observation</h3></div>"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:78170488-c160-4630-a15d-f90abf215a96",
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "78170488-c160-4630-a15d-f90abf215a96",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "34109-9",
+              "display": "Note"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/italia-sofia-missing-birthDate"
+        },
+        "date": "2025-09-08T11:32:52.646007+10:00",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "VEVzdGluZyA=",
+              "title": "Clinical Context"
+            }
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>DocumentReference</h3><p><strong>Status:</strong> current</p><p><strong>Type:</strong> Note</p><p><strong>Title:</strong> Clinical Context</p><p><strong>Content Type:</strong> text/plain</p></div>"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "DocumentReference"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:cca3cc41-4e8a-4d18-b21d-ca5adec35874",
+      "resource": {
+        "resourceType": "Coverage",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-coverage"
+          ]
+        },
+        "id": "cca3cc41-4e8a-4d18-b21d-ca5adec35874",
+        "status": "active",
+        "type": {
+          "coding": [
+            {
+              "code": "PUBLICPOL"
+            }
+          ],
+          "text": "Medicare"
+        },
+        "beneficiary": {
+          "reference": "Patient/italia-sofia-missing-birthDate"
+        },
+        "payor": [
+          {
+            "display": "Medicare"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Coverage</h3><p><strong>Status:</strong> active</p><p><strong>Type:</strong> PUBLICPOL</p></div>"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Coverage"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:4d0cc689-b416-4e8e-b133-12777cd35eeb",
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-servicerequest-imag"
+          ]
+        },
+        "contained": [
+          {
+            "resourceType": "Encounter",
+            "meta": {
+              "profile": [
+                "http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter"
+              ]
+            },
+            "id": "a7f07035-16db-45d1-86ea-b9989f9156f1",
+            "status": "planned",
+            "class": {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+              "code": "AMB",
+              "display": "ambulatory"
+            },
+            "subject": {
+              "reference": "Patient/italia-sofia-missing-birthDate"
+            }
+          }
+        ],
+        "extension": [
+          {
+            "url": "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-displaysequence",
+            "valueInteger": 1
+          },
+          {
+            "url": "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-fastingprecondition",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "16985007",
+                  "display": "Fasting"
+                }
+              ]
+            }
+          }
+        ],
+        "id": "4d0cc689-b416-4e8e-b133-12777cd35eeb",
+        "identifier": [
+          {
+            "use": "usual",
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "PLAC",
+                  "display": "Placer Identifier"
+                }
+              ]
+            },
+            "system": "http://myclinic.example.org.au/identifier",
+            "value": "25-601675-1"
+          }
+        ],
+        "status": "active",
+        "intent": "order",
+        "requisition": {
+          "use": "usual",
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                "code": "PGN",
+                "display": "Placer Group Number"
+              }
+            ]
+          },
+          "system": "http://myclinic.example.org.au/identifier",
+          "value": "25-601675"
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "363679005",
+                "display": "Imaging"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "268445003",
+              "display": "Obstetric ultrasound"
+            }
+          ],
+          "text": "Obstetric ultrasound"
+        },
+        "subject": {
+          "reference": "Patient/italia-sofia-missing-birthDate"
+        },
+        "encounter": {
+          "reference": "#a7f07035-16db-45d1-86ea-b9989f9156f1",
+          "type": "Encounter"
+        },
+        "authoredOn": "2025-09-08T11:32:52.646102+10:00",
+        "priority": "routine",
+        "quantityRange": {
+          "low": {
+            "value": 1,
+            "system": "http://unitsofmeasure.org",
+            "code": "1"
+          },
+          "high": {
+            "value": 3,
+            "system": "http://unitsofmeasure.org",
+            "code": "1"
+          }
+        },
+        "insurance": [
+          {
+            "reference": "urn:uuid:cca3cc41-4e8a-4d18-b21d-ca5adec35874"
+          }
+        ],
+        "requester": {
+          "reference": "PractitionerRole/diagnostic-parr-adelaide"
+        },
+        "performer": [
+          {
+            "reference": "Organization/back-valley-radiology"
+          }
+        ],
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "169565003",
+                "display": "Planned pregnancy"
+              }
+            ]
+          }
+        ],
+        "supportingInfo": [
+          {
+            "reference": "urn:uuid:93746e39-ac43-4642-a175-613e955c8fd2",
+            "display": "Pregnancy status"
+          },
+          {
+            "reference": "urn:uuid:78170488-c160-4630-a15d-f90abf215a96",
+            "display": "Clinical Context"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>ServiceRequest</h3><p><strong>Status:</strong> active</p><p><strong>Intent:</strong> order</p><p><strong>Test:</strong> Obstetric ultrasound</p><p><strong>Category:</strong> Imaging</p><p><strong>Sequence:</strong> 1</p><p><strong>Reasons:</strong> Planned pregnancy</p></div>"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "ServiceRequest"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:e8f91f78-3c48-421e-9c3f-005be526ad27",
+      "resource": {
+        "resourceType": "Task",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-task-diagnosticrequest"
+          ],
+          "tag": [
+            {
+              "system": "http://terminology.hl7.org.au/CodeSystem/resource-tag",
+              "code": "fulfilment-task"
+            }
+          ]
+        },
+        "id": "e8f91f78-3c48-421e-9c3f-005be526ad27",
+        "groupIdentifier": {
+          "use": "usual",
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                "code": "PGN",
+                "display": "Placer Group Number"
+              }
+            ]
+          },
+          "system": "http://myclinic.example.org.au/identifier",
+          "value": "25-601675"
+        },
+        "status": "requested",
+        "intent": "order",
+        "focus": {
+          "reference": "urn:uuid:4d0cc689-b416-4e8e-b133-12777cd35eeb"
+        },
+        "for": {
+          "reference": "Patient/italia-sofia-missing-birthDate"
+        },
+        "requester": {
+          "reference": "PractitionerRole/diagnostic-parr-adelaide"
+        },
+        "owner": {
+          "reference": "Organization/back-valley-radiology"
+        },
+        "partOf": [
+          {
+            "reference": "urn:uuid:fefeb5df-0e35-44c4-aa82-271b72bdb4f8"
+          }
+        ],
+        "authoredOn": "2025-09-08T11:32:52.646151+10:00",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Task</h3><p><strong>Status:</strong> requested</p><p><strong>Intent:</strong> order</p></div>"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Task"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:fefeb5df-0e35-44c4-aa82-271b72bdb4f8",
+      "resource": {
+        "resourceType": "Task",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-task-group"
+          ],
+          "tag": [
+            {
+              "system": "http://terminology.hl7.org.au/CodeSystem/resource-tag",
+              "code": "fulfilment-task-group"
+            }
+          ]
+        },
+        "id": "fefeb5df-0e35-44c4-aa82-271b72bdb4f8",
+        "groupIdentifier": {
+          "use": "usual",
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                "code": "PGN",
+                "display": "Placer Group Number"
+              }
+            ]
+          },
+          "system": "http://myclinic.example.org.au/identifier",
+          "value": "25-601675"
+        },
+        "status": "requested",
+        "intent": "order",
+        "description": "Radiology Order Group",
+        "for": {
+          "reference": "Patient/italia-sofia-missing-birthDate"
+        },
+        "requester": {
+          "reference": "PractitionerRole/diagnostic-parr-adelaide"
+        },
+        "owner": {
+          "reference": "Organization/back-valley-radiology"
+        },
+        "authoredOn": "2025-09-08T11:32:52.646176+10:00",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Task</h3><p><strong>Status:</strong> requested</p><p><strong>Intent:</strong> order</p><p><strong>Description:</strong> Radiology Order Group</p></div>"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Task"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:3469d1da-3a1a-428c-8040-5bf0e81b7f01",
+      "resource": {
+        "resourceType": "CommunicationRequest",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-communicationrequest-copyto"
+          ]
+        },
+        "id": "3469d1da-3a1a-428c-8040-5bf0e81b7f01",
+        "groupIdentifier": {
+          "use": "usual",
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                "code": "PGN",
+                "display": "Placer Group Number"
+              }
+            ]
+          },
+          "system": "http://myclinic.example.org.au/identifier",
+          "value": "25-601675"
+        },
+        "status": "active",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/communication-category",
+                "code": "notification"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/italia-sofia-missing-birthDate"
+        },
+        "about": [
+          {
+            "reference": "urn:uuid:4d0cc689-b416-4e8e-b133-12777cd35eeb"
+          }
+        ],
+        "requester": {
+          "reference": "PractitionerRole/diagnostic-parr-adelaide"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org.au/CodeSystem/communicationrequest-reason",
+                "code": "copyto"
+              }
+            ]
+          }
+        ],
+        "recipient": [
+          {
+            "reference": "PractitionerRole/midwife-thorn-brittany"
+          }
+        ],
+        "authoredOn": "2025-09-08T11:32:52.646216+10:00",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>CommunicationRequest</h3><p><strong>Status:</strong> active</p><p>Request for communication regarding patient care.</p></div>"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "CommunicationRequest"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6f9240c1-5c10-425a-b5f1-f7ba691c15e4",
+      "request": {
+        "method": "GET",
+        "url": "PractitionerRole/midwife-thorn-brittany"
+      }
+    }
+  ],
+  "timestamp": "2025-09-08T11:32:52.268656+10:00"
+}

@@ -1,0 +1,637 @@
+{
+  "resourceType": "Bundle",
+  "id": "e975f309-6033-4b4e-8b6f-fba12c07d66a",
+  "type": "transaction",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:26e5dc80-6e95-4ace-8863-aa4eb09cdcfc",
+      "resource": {
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+          ],
+          "lastUpdated": "2025-03-18T00:19:22.086042Z",
+          "versionId": "1205",
+          "extension": [
+            {
+              "url": "https://aidbox.app/ex/createdAt",
+              "valueInstant": "2025-03-06T07:44:24.116011Z"
+            }
+          ]
+        },
+        "specialty": [
+          {
+            "coding": [
+              {
+                "code": "408443003",
+                "system": "http://snomed.info/sct",
+                "display": "General medical practice"
+              }
+            ]
+          }
+        ],
+        "organization": {
+          "reference": "Organization/alice-springs-medical-practice"
+        },
+        "resourceType": "PractitionerRole",
+        "id": "generalpractitioner-guthrie-aaron",
+        "code": [
+          {
+            "coding": [
+              {
+                "code": "253111",
+                "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
+                "display": "General Practitioner"
+              }
+            ]
+          }
+        ],
+        "identifier": [
+          {
+            "type": {
+              "text": "Medicare Provider Number",
+              "coding": [
+                {
+                  "code": "UPIN",
+                  "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203"
+                }
+              ]
+            },
+            "value": "2449551K",
+            "system": "http://ns.electronichealth.net.au/id/medicare-provider-number"
+          }
+        ],
+        "practitioner": {
+          "reference": "Practitioner/guthrie-aaron"
+        },
+        "telecom": [
+          {
+            "use": "work",
+            "value": "0870103214",
+            "system": "phone"
+          },
+          {
+            "use": "work",
+            "value": "aaron.guthrie@alicespringsmp.example.com.au",
+            "system": "email"
+          }
+        ],
+        "location": [
+          {
+            "reference": "Location/alice-springs-medical-practice"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>PractitionerRole</h3></div>"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "PractitionerRole/generalpractitioner-guthrie-aaron"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:cc41d2b3-27f6-4544-a3d1-3c86eb387d3f",
+      "request": {
+        "method": "GET",
+        "url": "Organization/bridgewater-pathology"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:b7e8fe8a-9f11-4fae-b4db-383e2adf3d24",
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "b7e8fe8a-9f11-4fae-b4db-383e2adf3d24",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "34109-9",
+              "display": "Note"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/banks-jeramy-ezra-2"
+        },
+        "date": "2025-09-08T09:58:23.313989+10:00",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "T24gV2FyZmFyaW4=",
+              "title": "Clinical Context"
+            }
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>DocumentReference</h3><p><strong>Status:</strong> current</p><p><strong>Type:</strong> Note</p><p><strong>Title:</strong> Clinical Context</p><p><strong>Content Type:</strong> text/plain</p></div>"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "DocumentReference"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:16178442-d14f-4956-b53d-eac128e54645",
+      "resource": {
+        "resourceType": "Coverage",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-coverage"
+          ]
+        },
+        "id": "16178442-d14f-4956-b53d-eac128e54645",
+        "status": "active",
+        "type": {
+          "coding": [
+            {
+              "code": "PUBLICPOL"
+            }
+          ],
+          "text": "Medicare"
+        },
+        "beneficiary": {
+          "reference": "Patient/banks-jeramy-ezra-2"
+        },
+        "payor": [
+          {
+            "display": "Medicare"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Coverage</h3><p><strong>Status:</strong> active</p><p><strong>Type:</strong> PUBLICPOL</p></div>"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Coverage"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:5a026baf-6b34-4d46-ab4d-a7c91f4816b0",
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-servicerequest-path"
+          ]
+        },
+        "contained": [
+          {
+            "resourceType": "Encounter",
+            "meta": {
+              "profile": [
+                "http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter"
+              ]
+            },
+            "id": "484111ef-a618-4c42-8b99-ebb18caf776d",
+            "status": "planned",
+            "class": {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+              "code": "AMB",
+              "display": "ambulatory"
+            },
+            "subject": {
+              "reference": "Patient/banks-jeramy-ezra-2"
+            }
+          }
+        ],
+        "extension": [
+          {
+            "url": "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-displaysequence",
+            "valueInteger": 1
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/request-statusReason",
+            "valueCodeableConcept": {
+              "text": "patient feeling unwell"
+            }
+          }
+        ],
+        "id": "5a026baf-6b34-4d46-ab4d-a7c91f4816b0",
+        "identifier": [
+          {
+            "use": "usual",
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "PLAC",
+                  "display": "Placer Identifier"
+                }
+              ]
+            },
+            "system": "http://myclinic.example.org.au/identifier",
+            "value": "25-623679-1"
+          }
+        ],
+        "status": "on-hold",
+        "intent": "order",
+        "requisition": {
+          "use": "usual",
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                "code": "PGN",
+                "display": "Placer Group Number"
+              }
+            ]
+          },
+          "system": "http://myclinic.example.org.au/identifier",
+          "value": "25-623679"
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "108252007",
+                "display": "Laboratory procedure"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "396451008",
+              "display": "Prothrombin time"
+            }
+          ],
+          "text": "Prothrombin time"
+        },
+        "subject": {
+          "reference": "Patient/banks-jeramy-ezra-2"
+        },
+        "encounter": {
+          "reference": "#484111ef-a618-4c42-8b99-ebb18caf776d",
+          "type": "Encounter"
+        },
+        "authoredOn": "2025-09-08T09:58:23.314168+10:00",
+        "insurance": [
+          {
+            "reference": "urn:uuid:16178442-d14f-4956-b53d-eac128e54645"
+          }
+        ],
+        "requester": {
+          "reference": "PractitionerRole/generalpractitioner-guthrie-aaron"
+        },
+        "performer": [
+          {
+            "reference": "Organization/bridgewater-pathology"
+          }
+        ],
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "49601007",
+                "display": "Cardiovascular disease"
+              }
+            ]
+          }
+        ],
+        "supportingInfo": [
+          {
+            "reference": "urn:uuid:b7e8fe8a-9f11-4fae-b4db-383e2adf3d24",
+            "display": "Clinical Context"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>ServiceRequest</h3><p><strong>Status:</strong> on-hold</p><p><strong>Intent:</strong> order</p><p><strong>Test:</strong> Prothrombin time</p><p><strong>Category:</strong> Laboratory procedure</p><p><strong>Sequence:</strong> 1</p><p><strong>Reasons:</strong> Cardiovascular disease</p></div>"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "ServiceRequest"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:2d2bd079-129a-4bc9-a814-ba3f0c19dc35",
+      "resource": {
+        "resourceType": "Task",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-task-diagnosticrequest"
+          ],
+          "tag": [
+            {
+              "system": "http://terminology.hl7.org.au/CodeSystem/resource-tag",
+              "code": "fulfilment-task"
+            }
+          ]
+        },
+        "id": "2d2bd079-129a-4bc9-a814-ba3f0c19dc35",
+        "groupIdentifier": {
+          "use": "usual",
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                "code": "PGN",
+                "display": "Placer Group Number"
+              }
+            ]
+          },
+          "system": "http://myclinic.example.org.au/identifier",
+          "value": "25-623679"
+        },
+        "status": "requested",
+        "intent": "order",
+        "focus": {
+          "reference": "urn:uuid:5a026baf-6b34-4d46-ab4d-a7c91f4816b0"
+        },
+        "for": {
+          "reference": "Patient/banks-jeramy-ezra-2"
+        },
+        "requester": {
+          "reference": "PractitionerRole/generalpractitioner-guthrie-aaron"
+        },
+        "owner": {
+          "reference": "Organization/bridgewater-pathology"
+        },
+        "partOf": [
+          {
+            "reference": "urn:uuid:0d1d9e0c-2928-43f0-815d-ae1a9241fbe5"
+          }
+        ],
+        "authoredOn": "2025-09-08T09:58:23.314300+10:00",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Task</h3><p><strong>Status:</strong> requested</p><p><strong>Intent:</strong> order</p></div>"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Task"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:e2479746-528c-48ef-8ba6-823fb268e287",
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-servicerequest-path"
+          ]
+        },
+        "contained": [
+          {
+            "resourceType": "Encounter",
+            "meta": {
+              "profile": [
+                "http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter"
+              ]
+            },
+            "id": "07b64137-0768-4319-a14e-6cd7ae757bf6",
+            "status": "planned",
+            "class": {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+              "code": "AMB",
+              "display": "ambulatory"
+            },
+            "subject": {
+              "reference": "Patient/banks-jeramy-ezra-2"
+            }
+          }
+        ],
+        "extension": [
+          {
+            "url": "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-displaysequence",
+            "valueInteger": 2
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/request-statusReason",
+            "valueCodeableConcept": {
+              "text": "patient feeling unwell"
+            }
+          }
+        ],
+        "id": "e2479746-528c-48ef-8ba6-823fb268e287",
+        "identifier": [
+          {
+            "use": "usual",
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "PLAC",
+                  "display": "Placer Identifier"
+                }
+              ]
+            },
+            "system": "http://myclinic.example.org.au/identifier",
+            "value": "25-623679-2"
+          }
+        ],
+        "status": "on-hold",
+        "intent": "order",
+        "requisition": {
+          "use": "usual",
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                "code": "PGN",
+                "display": "Placer Group Number"
+              }
+            ]
+          },
+          "system": "http://myclinic.example.org.au/identifier",
+          "value": "25-623679"
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "108252007",
+                "display": "Laboratory procedure"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "933506271000036105",
+              "display": "Point of care PT/INR measurement"
+            }
+          ],
+          "text": "Point of care PT/INR measurement"
+        },
+        "subject": {
+          "reference": "Patient/banks-jeramy-ezra-2"
+        },
+        "encounter": {
+          "reference": "#07b64137-0768-4319-a14e-6cd7ae757bf6",
+          "type": "Encounter"
+        },
+        "authoredOn": "2025-09-08T09:58:23.314395+10:00",
+        "insurance": [
+          {
+            "reference": "urn:uuid:16178442-d14f-4956-b53d-eac128e54645"
+          }
+        ],
+        "requester": {
+          "reference": "PractitionerRole/generalpractitioner-guthrie-aaron"
+        },
+        "performer": [
+          {
+            "reference": "Organization/bridgewater-pathology"
+          }
+        ],
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "49601007",
+                "display": "Cardiovascular disease"
+              }
+            ]
+          }
+        ],
+        "supportingInfo": [
+          {
+            "reference": "urn:uuid:b7e8fe8a-9f11-4fae-b4db-383e2adf3d24",
+            "display": "Clinical Context"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>ServiceRequest</h3><p><strong>Status:</strong> on-hold</p><p><strong>Intent:</strong> order</p><p><strong>Test:</strong> Point of care PT/INR measurement</p><p><strong>Category:</strong> Laboratory procedure</p><p><strong>Sequence:</strong> 2</p><p><strong>Reasons:</strong> Cardiovascular disease</p></div>"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "ServiceRequest"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:03a2fdaf-4c5b-4bca-b729-523ac79f1ba2",
+      "resource": {
+        "resourceType": "Task",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-task-diagnosticrequest"
+          ],
+          "tag": [
+            {
+              "system": "http://terminology.hl7.org.au/CodeSystem/resource-tag",
+              "code": "fulfilment-task"
+            }
+          ]
+        },
+        "id": "03a2fdaf-4c5b-4bca-b729-523ac79f1ba2",
+        "groupIdentifier": {
+          "use": "usual",
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                "code": "PGN",
+                "display": "Placer Group Number"
+              }
+            ]
+          },
+          "system": "http://myclinic.example.org.au/identifier",
+          "value": "25-623679"
+        },
+        "status": "requested",
+        "intent": "order",
+        "focus": {
+          "reference": "urn:uuid:e2479746-528c-48ef-8ba6-823fb268e287"
+        },
+        "for": {
+          "reference": "Patient/banks-jeramy-ezra-2"
+        },
+        "requester": {
+          "reference": "PractitionerRole/generalpractitioner-guthrie-aaron"
+        },
+        "owner": {
+          "reference": "Organization/bridgewater-pathology"
+        },
+        "partOf": [
+          {
+            "reference": "urn:uuid:0d1d9e0c-2928-43f0-815d-ae1a9241fbe5"
+          }
+        ],
+        "authoredOn": "2025-09-08T09:58:23.314484+10:00",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Task</h3><p><strong>Status:</strong> requested</p><p><strong>Intent:</strong> order</p></div>"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Task"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:0d1d9e0c-2928-43f0-815d-ae1a9241fbe5",
+      "resource": {
+        "resourceType": "Task",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-task-group"
+          ],
+          "tag": [
+            {
+              "system": "http://terminology.hl7.org.au/CodeSystem/resource-tag",
+              "code": "fulfilment-task-group"
+            }
+          ]
+        },
+        "id": "0d1d9e0c-2928-43f0-815d-ae1a9241fbe5",
+        "groupIdentifier": {
+          "use": "usual",
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                "code": "PGN",
+                "display": "Placer Group Number"
+              }
+            ]
+          },
+          "system": "http://myclinic.example.org.au/identifier",
+          "value": "25-623679"
+        },
+        "status": "requested",
+        "intent": "order",
+        "description": "Pathology Order Group",
+        "for": {
+          "reference": "Patient/banks-jeramy-ezra-2"
+        },
+        "requester": {
+          "reference": "PractitionerRole/generalpractitioner-guthrie-aaron"
+        },
+        "owner": {
+          "reference": "Organization/bridgewater-pathology"
+        },
+        "authoredOn": "2025-09-08T09:58:23.314518+10:00",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Task</h3><p><strong>Status:</strong> requested</p><p><strong>Intent:</strong> order</p><p><strong>Description:</strong> Pathology Order Group</p></div>"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Task"
+      }
+    }
+  ],
+  "timestamp": "2025-09-08T09:58:22.807293+10:00"
+}

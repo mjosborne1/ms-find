@@ -31,13 +31,37 @@ The tool uses a configuration file at `config/config.json`:
 
 ```json
 {
-  "npm_packages": ["hl7.fhir.au.ereq"],
-  "output_directory": "/path/to/output/directory"
+  "init": [
+    {
+      "mode": "dirty",
+      "endpoint": "https://tx.dev.hl7.org.au/fhir"
+    }
+  ],
+  "fhir-package-cache": "/Users/username/.fhir/packages",
+  "instances-directory": "",
+  "packages": [
+    {
+      "name": "hl7.fhir.au.ereq",
+      "version": "1.0.0-ballot",
+      "title": "AU eRequesting Implementation Guide"
+    }
+  ]
 }
 ```
 
-- `npm_packages`: List of FHIR package names to analyze
-- `output_directory`: Where to save the TSV output files
+### Configuration Options
+
+- **`init`**: Initialization settings
+  - `mode`: Either "clean" (removes and re-copies packages) or "dirty" (uses existing local packages)
+  - `endpoint`: FHIR terminology server endpoint
+- **`fhir-package-cache`**: Path to your local FHIR package cache (typically `~/.fhir/packages/`)
+- **`instances-directory`**: Path to folder containing FHIR instance files for analysis
+  - Leave empty (`""`) to use the default `instances/` folder in the project directory
+  - Set to an absolute or relative path to use a custom location (e.g., `"/path/to/test-data"`)
+- **`packages`**: Array of FHIR packages to analyze
+  - `name`: Package identifier
+  - `version`: Package version
+  - `title`: Descriptive title
 
 ## Usage
 
@@ -57,9 +81,15 @@ This will:
 
 To analyze how frequently mustSupport elements are used:
 
+**Option 1: Using the default instances folder**
 1. Create an `instances/` folder in the project directory
 2. Place FHIR Bundle JSON files in this folder
 3. Run the tool - it will automatically analyze these instances
+
+**Option 2: Using a custom instances directory**
+1. Set the `instances-directory` path in `config/config.json`
+2. Place FHIR Bundle JSON files in that directory
+3. Run the tool - it will analyze instances from the configured location
 
 The tool will:
 - Parse each JSON file as a FHIR Bundle

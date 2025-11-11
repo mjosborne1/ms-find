@@ -1,0 +1,487 @@
+{
+  "resourceType": "Bundle",
+  "id": "6bada8ed-f5f9-449f-91fa-2873bfacf763",
+  "type": "transaction",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:72f17e89-ecb2-4f10-897a-6fced1840549",
+      "resource": {
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+          ],
+          "lastUpdated": "2025-03-18T00:19:22.086042Z",
+          "versionId": "1205",
+          "extension": [
+            {
+              "url": "https://aidbox.app/ex/createdAt",
+              "valueInstant": "2025-03-06T07:44:24.116011Z"
+            }
+          ]
+        },
+        "specialty": [
+          {
+            "coding": [
+              {
+                "code": "408443003",
+                "system": "http://snomed.info/sct",
+                "display": "General medical practice"
+              }
+            ]
+          }
+        ],
+        "organization": {
+          "reference": "Organization/alice-springs-medical-practice"
+        },
+        "resourceType": "PractitionerRole",
+        "id": "generalpractitioner-guthrie-aaron",
+        "code": [
+          {
+            "coding": [
+              {
+                "code": "253111",
+                "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
+                "display": "General Practitioner"
+              }
+            ]
+          }
+        ],
+        "identifier": [
+          {
+            "type": {
+              "text": "Medicare Provider Number",
+              "coding": [
+                {
+                  "code": "UPIN",
+                  "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203"
+                }
+              ]
+            },
+            "value": "2449551K",
+            "system": "http://ns.electronichealth.net.au/id/medicare-provider-number"
+          }
+        ],
+        "practitioner": {
+          "reference": "Practitioner/guthrie-aaron"
+        },
+        "telecom": [
+          {
+            "use": "work",
+            "value": "0870103214",
+            "system": "phone"
+          },
+          {
+            "use": "work",
+            "value": "aaron.guthrie@alicespringsmp.example.com.au",
+            "system": "email"
+          }
+        ],
+        "location": [
+          {
+            "reference": "Location/alice-springs-medical-practice"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>PractitionerRole</h3></div>"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "PractitionerRole/generalpractitioner-guthrie-aaron"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:526b6c99-893c-4761-b066-72d51c141dce",
+      "request": {
+        "method": "GET",
+        "url": "Organization/bayview-pathology"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:da5c45bd-30d1-48a1-930f-ee3946f23e64",
+      "resource": {
+        "resourceType": "Observation",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-pregnancy-status-uv-ips"
+          ]
+        },
+        "id": "da5c45bd-30d1-48a1-930f-ee3946f23e64",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "exam",
+                "display": "Exam"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "77386006",
+              "display": "Pregnancy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/wang-li"
+        },
+        "effectiveDateTime": "2025-09-08T09:15:04.924587+10:00",
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "77386006",
+              "display": "Pregnant"
+            }
+          ]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Observation</h3></div>"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:21875ad0-ec85-4bad-98d3-27bbf25faf5a",
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "21875ad0-ec85-4bad-98d3-27bbf25faf5a",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "34109-9",
+              "display": "Note"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/wang-li"
+        },
+        "date": "2025-09-08T09:15:04.924655+10:00",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "cGFpbiBvbiB1cmluYXRpb24=",
+              "title": "Clinical Context"
+            }
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>DocumentReference</h3><p><strong>Status:</strong> current</p><p><strong>Type:</strong> Note</p><p><strong>Title:</strong> Clinical Context</p><p><strong>Content Type:</strong> text/plain</p></div>"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "DocumentReference"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:94602f36-b798-40cb-888c-7fe7e6fd1aaa",
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-servicerequest-path"
+          ]
+        },
+        "contained": [
+          {
+            "resourceType": "Encounter",
+            "meta": {
+              "profile": [
+                "http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter"
+              ]
+            },
+            "id": "207fd5aa-c289-4e4b-bb18-155f72aee916",
+            "status": "planned",
+            "class": {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+              "code": "AMB",
+              "display": "ambulatory"
+            },
+            "subject": {
+              "reference": "Patient/wang-li"
+            }
+          }
+        ],
+        "extension": [
+          {
+            "url": "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-displaysequence",
+            "valueInteger": 1
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/request-statusReason",
+            "valueCodeableConcept": {
+              "text": "Awaiting collection"
+            }
+          }
+        ],
+        "id": "94602f36-b798-40cb-888c-7fe7e6fd1aaa",
+        "identifier": [
+          {
+            "use": "usual",
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "PLAC",
+                  "display": "Placer Identifier"
+                }
+              ]
+            },
+            "system": "http://myclinic.example.org.au/identifier",
+            "value": "25-113323-1"
+          }
+        ],
+        "status": "on-hold",
+        "intent": "order",
+        "requisition": {
+          "use": "usual",
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                "code": "PGN",
+                "display": "Placer Group Number"
+              }
+            ]
+          },
+          "system": "http://myclinic.example.org.au/identifier",
+          "value": "25-113323"
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "108252007",
+                "display": "Laboratory procedure"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "401324008",
+              "display": "Urine microscopy, culture and sensitivities"
+            }
+          ],
+          "text": "Urine microscopy, culture and sensitivities"
+        },
+        "subject": {
+          "reference": "Patient/wang-li"
+        },
+        "encounter": {
+          "reference": "#207fd5aa-c289-4e4b-bb18-155f72aee916",
+          "type": "Encounter"
+        },
+        "authoredOn": "2025-09-08T09:15:04.924721+10:00",
+        "requester": {
+          "reference": "PractitionerRole/generalpractitioner-guthrie-aaron"
+        },
+        "performer": [
+          {
+            "reference": "Organization/bayview-pathology"
+          }
+        ],
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "167230006",
+                "display": "Urine inspection"
+              }
+            ]
+          }
+        ],
+        "supportingInfo": [
+          {
+            "reference": "urn:uuid:da5c45bd-30d1-48a1-930f-ee3946f23e64",
+            "display": "Pregnancy status"
+          },
+          {
+            "reference": "urn:uuid:21875ad0-ec85-4bad-98d3-27bbf25faf5a",
+            "display": "Clinical Context"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>ServiceRequest</h3><p><strong>Status:</strong> on-hold</p><p><strong>Intent:</strong> order</p><p><strong>Test:</strong> Urine microscopy, culture and sensitivities</p><p><strong>Category:</strong> Laboratory procedure</p><p><strong>Sequence:</strong> 1</p><p><strong>Reasons:</strong> Urine inspection</p></div>"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "ServiceRequest"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:75445fc8-0ea9-405c-b6d6-d68946b802b5",
+      "resource": {
+        "resourceType": "Task",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-task-diagnosticrequest"
+          ],
+          "tag": [
+            {
+              "system": "http://terminology.hl7.org.au/CodeSystem/resource-tag",
+              "code": "fulfilment-task"
+            }
+          ]
+        },
+        "id": "75445fc8-0ea9-405c-b6d6-d68946b802b5",
+        "groupIdentifier": {
+          "use": "usual",
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                "code": "PGN",
+                "display": "Placer Group Number"
+              }
+            ]
+          },
+          "system": "http://myclinic.example.org.au/identifier",
+          "value": "25-113323"
+        },
+        "status": "requested",
+        "intent": "order",
+        "focus": {
+          "reference": "urn:uuid:94602f36-b798-40cb-888c-7fe7e6fd1aaa"
+        },
+        "for": {
+          "reference": "Patient/wang-li"
+        },
+        "requester": {
+          "reference": "PractitionerRole/generalpractitioner-guthrie-aaron"
+        },
+        "owner": {
+          "reference": "Organization/bayview-pathology"
+        },
+        "partOf": [
+          {
+            "reference": "urn:uuid:e81c6dbe-cded-4c06-aac5-9ab76b775acf"
+          }
+        ],
+        "authoredOn": "2025-09-08T09:15:04.924775+10:00",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Task</h3><p><strong>Status:</strong> requested</p><p><strong>Intent:</strong> order</p></div>"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Task"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:e81c6dbe-cded-4c06-aac5-9ab76b775acf",
+      "resource": {
+        "resourceType": "Task",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-task-group"
+          ],
+          "tag": [
+            {
+              "system": "http://terminology.hl7.org.au/CodeSystem/resource-tag",
+              "code": "fulfilment-task-group"
+            }
+          ]
+        },
+        "id": "e81c6dbe-cded-4c06-aac5-9ab76b775acf",
+        "groupIdentifier": {
+          "use": "usual",
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                "code": "PGN",
+                "display": "Placer Group Number"
+              }
+            ]
+          },
+          "system": "http://myclinic.example.org.au/identifier",
+          "value": "25-113323"
+        },
+        "status": "requested",
+        "intent": "order",
+        "description": "Pathology Order Group",
+        "for": {
+          "reference": "Patient/wang-li"
+        },
+        "requester": {
+          "reference": "PractitionerRole/generalpractitioner-guthrie-aaron"
+        },
+        "owner": {
+          "reference": "Organization/bayview-pathology"
+        },
+        "authoredOn": "2025-09-08T09:15:04.924812+10:00",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Task</h3><p><strong>Status:</strong> requested</p><p><strong>Intent:</strong> order</p><p><strong>Description:</strong> Pathology Order Group</p></div>"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Task"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:f423993c-3f62-4cf5-92f9-f0139f92d513",
+      "resource": {
+        "resourceType": "Coverage",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-coverage"
+          ]
+        },
+        "id": "f423993c-3f62-4cf5-92f9-f0139f92d513",
+        "status": "active",
+        "type": {
+          "coding": [
+            {
+              "code": "PUBLICPOL"
+            }
+          ],
+          "text": "Medicare"
+        },
+        "beneficiary": {
+          "reference": "Patient/wang-li"
+        },
+        "payor": [
+          {
+            "display": "Medicare"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Coverage</h3><p><strong>Status:</strong> active</p><p><strong>Type:</strong> PUBLICPOL</p></div>"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Coverage"
+      }
+    }
+  ],
+  "timestamp": "2025-09-08T09:15:04.377919+10:00"
+}

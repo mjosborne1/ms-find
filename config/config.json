@@ -6,6 +6,7 @@
     }
   ],
   "fhir-package-cache": "/Users/osb074/.fhir/packages",
+  "instances-directory": "/Users/osb074/Development/hl7au/mjo-au-fhir-test-data/au-fhir-test-data-set",
   "valueset-binding-options": {
     "require-must-support": true,
     "minimum-binding-strength": [

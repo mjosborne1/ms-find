@@ -137,9 +137,22 @@ def check_element_populated(resource, element_path, extension_uri=None):
                 if not found:
                     return False
             elif isinstance(current_obj, dict):
+                # Handle choice types (e.g., quantity[x] which can be quantityQuantity, quantityRange, etc.)
                 if part not in current_obj:
-                    return False
-                current_obj = current_obj[part]
+                    # Check if this might be a choice type by looking for fields that start with this part
+                    if part.endswith('[x]'):
+                        base_name = part[:-3]  # Remove '[x]' suffix
+                        choice_fields = [key for key in current_obj.keys() if key.startswith(base_name)]
+                        if choice_fields:
+                            # Found at least one choice field, consider it populated
+                            # For path traversal, we'll use the first one found
+                            current_obj = current_obj[choice_fields[0]]
+                        else:
+                            return False
+                    else:
+                        return False
+                else:
+                    current_obj = current_obj[part]
             else:
                 return False
     
@@ -357,7 +370,19 @@ def main():
         sys.exit(1)
     
     # Analyze instances directory if it exists
-    instances_dir = os.path.join(os.getcwd(), "instances")
+    # Get instances directory from config, or use default
+    try:
+        instances_dir = get_config(config_file, "instances-directory")
+        if not instances_dir or instances_dir.strip() == "":
+            instances_dir = os.path.join(os.getcwd(), "instances")
+            logger.info(f"Using default instances directory: {instances_dir}")
+        else:
+            logger.info(f"Using configured instances directory: {instances_dir}")
+    except (KeyError, TypeError):
+        # Config key doesn't exist, use default
+        instances_dir = os.path.join(os.getcwd(), "instances")
+        logger.info(f"Using default instances directory: {instances_dir}")
+    
     try:
         must_support_elements = analyze_instances(instances_dir, must_support_elements)
         logger.info("Instance analysis completed")

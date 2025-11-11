@@ -1,0 +1,745 @@
+{
+  "resourceType": "Bundle",
+  "id": "7a879f0c-1774-48c1-8bc6-9224ea724bf7",
+  "type": "transaction",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:bbddd822-b562-49c1-be5d-5d251e6d3a95",
+      "resource": {
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/core/StructureDefinition/au-core-practitionerrole"
+          ],
+          "lastUpdated": "2025-03-18T00:19:22.086042Z",
+          "versionId": "1205",
+          "extension": [
+            {
+              "url": "https://aidbox.app/ex/createdAt",
+              "valueInstant": "2025-03-06T07:44:24.116011Z"
+            }
+          ]
+        },
+        "specialty": [
+          {
+            "coding": [
+              {
+                "code": "408443003",
+                "system": "http://snomed.info/sct",
+                "display": "General medical practice"
+              }
+            ]
+          }
+        ],
+        "organization": {
+          "reference": "Organization/alice-springs-medical-practice"
+        },
+        "resourceType": "PractitionerRole",
+        "id": "generalpractitioner-guthrie-aaron",
+        "code": [
+          {
+            "coding": [
+              {
+                "code": "253111",
+                "system": "http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0",
+                "display": "General Practitioner"
+              }
+            ]
+          }
+        ],
+        "identifier": [
+          {
+            "type": {
+              "text": "Medicare Provider Number",
+              "coding": [
+                {
+                  "code": "UPIN",
+                  "system": "http://terminology.hl7.org.au/CodeSystem/v2-0203"
+                }
+              ]
+            },
+            "value": "2449551K",
+            "system": "http://ns.electronichealth.net.au/id/medicare-provider-number"
+          }
+        ],
+        "practitioner": {
+          "reference": "Practitioner/guthrie-aaron"
+        },
+        "telecom": [
+          {
+            "use": "work",
+            "value": "0870103214",
+            "system": "phone"
+          },
+          {
+            "use": "work",
+            "value": "aaron.guthrie@alicespringsmp.example.com.au",
+            "system": "email"
+          }
+        ],
+        "location": [
+          {
+            "reference": "Location/alice-springs-medical-practice"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>PractitionerRole</h3></div>"
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "PractitionerRole/generalpractitioner-guthrie-aaron"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:c0d6ff9c-7e5c-4897-9e60-d897493cf76b",
+      "request": {
+        "method": "GET",
+        "url": "Organization/calwell-pathology"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:dbd6b4fd-64c6-4b03-879c-81f994ea1855",
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "dbd6b4fd-64c6-4b03-879c-81f994ea1855",
+        "status": "current",
+        "type": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "34109-9",
+              "display": "Note"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/bennelong-anne"
+        },
+        "date": "2025-09-08T10:43:32.566975+10:00",
+        "content": [
+          {
+            "attachment": {
+              "contentType": "text/plain",
+              "data": "dGVzdGluZyB0ZXN0aW5n",
+              "title": "Clinical Context"
+            }
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>DocumentReference</h3><p><strong>Status:</strong> current</p><p><strong>Type:</strong> Note</p><p><strong>Title:</strong> Clinical Context</p><p><strong>Content Type:</strong> text/plain</p></div>"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "DocumentReference"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:5ade17b1-d955-4079-93f3-1e03d5f6e3f1",
+      "resource": {
+        "resourceType": "Coverage",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-coverage"
+          ]
+        },
+        "id": "5ade17b1-d955-4079-93f3-1e03d5f6e3f1",
+        "status": "active",
+        "type": {
+          "coding": [
+            {
+              "code": "PUBLICPOL"
+            }
+          ],
+          "text": "Medicare"
+        },
+        "beneficiary": {
+          "reference": "Patient/bennelong-anne"
+        },
+        "payor": [
+          {
+            "display": "Medicare"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Coverage</h3><p><strong>Status:</strong> active</p><p><strong>Type:</strong> PUBLICPOL</p></div>"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Coverage"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:92ade2d7-18ba-4ada-a614-f9972cfb8584",
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-servicerequest-path"
+          ]
+        },
+        "contained": [
+          {
+            "resourceType": "Encounter",
+            "meta": {
+              "profile": [
+                "http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter"
+              ]
+            },
+            "id": "719553e6-586d-4d18-9f9c-dc00453ade6d",
+            "status": "planned",
+            "class": {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+              "code": "AMB",
+              "display": "ambulatory"
+            },
+            "subject": {
+              "reference": "Patient/bennelong-anne"
+            }
+          }
+        ],
+        "extension": [
+          {
+            "url": "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-displaysequence",
+            "valueInteger": 1
+          },
+          {
+            "url": "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-fastingprecondition",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "276330003",
+                  "display": "Non-fasting"
+                }
+              ]
+            }
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/request-statusReason",
+            "valueCodeableConcept": {
+              "text": "Broke tube in centrifuge"
+            }
+          }
+        ],
+        "id": "92ade2d7-18ba-4ada-a614-f9972cfb8584",
+        "identifier": [
+          {
+            "use": "usual",
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "PLAC",
+                  "display": "Placer Identifier"
+                }
+              ]
+            },
+            "system": "http://myclinic.example.org.au/identifier",
+            "value": "25-665172-1"
+          }
+        ],
+        "status": "on-hold",
+        "intent": "order",
+        "requisition": {
+          "use": "usual",
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                "code": "PGN",
+                "display": "Placer Group Number"
+              }
+            ]
+          },
+          "system": "http://myclinic.example.org.au/identifier",
+          "value": "25-665172"
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "108252007",
+                "display": "Laboratory procedure"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "271062006",
+              "display": "Fasting blood glucose measurement"
+            }
+          ],
+          "text": "Fasting blood glucose measurement"
+        },
+        "subject": {
+          "reference": "Patient/bennelong-anne"
+        },
+        "encounter": {
+          "reference": "#719553e6-586d-4d18-9f9c-dc00453ade6d",
+          "type": "Encounter"
+        },
+        "authoredOn": "2025-09-08T10:43:32.567087+10:00",
+        "priority": "routine",
+        "insurance": [
+          {
+            "reference": "urn:uuid:5ade17b1-d955-4079-93f3-1e03d5f6e3f1"
+          }
+        ],
+        "requester": {
+          "reference": "PractitionerRole/generalpractitioner-guthrie-aaron"
+        },
+        "performer": [
+          {
+            "reference": "Organization/calwell-pathology"
+          }
+        ],
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "170777000",
+                "display": "Diabetic annual review"
+              }
+            ]
+          }
+        ],
+        "supportingInfo": [
+          {
+            "reference": "urn:uuid:dbd6b4fd-64c6-4b03-879c-81f994ea1855",
+            "display": "Clinical Context"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>ServiceRequest</h3><p><strong>Status:</strong> on-hold</p><p><strong>Intent:</strong> order</p><p><strong>Test:</strong> Fasting blood glucose measurement</p><p><strong>Category:</strong> Laboratory procedure</p><p><strong>Sequence:</strong> 1</p><p><strong>Reasons:</strong> Diabetic annual review</p></div>"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "ServiceRequest"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:87bd2e6d-3299-4412-87e2-651bf4b660f5",
+      "resource": {
+        "resourceType": "Task",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-task-diagnosticrequest"
+          ],
+          "tag": [
+            {
+              "system": "http://terminology.hl7.org.au/CodeSystem/resource-tag",
+              "code": "fulfilment-task"
+            }
+          ]
+        },
+        "id": "87bd2e6d-3299-4412-87e2-651bf4b660f5",
+        "groupIdentifier": {
+          "use": "usual",
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                "code": "PGN",
+                "display": "Placer Group Number"
+              }
+            ]
+          },
+          "system": "http://myclinic.example.org.au/identifier",
+          "value": "25-665172"
+        },
+        "status": "requested",
+        "intent": "order",
+        "focus": {
+          "reference": "urn:uuid:92ade2d7-18ba-4ada-a614-f9972cfb8584"
+        },
+        "for": {
+          "reference": "Patient/bennelong-anne"
+        },
+        "requester": {
+          "reference": "PractitionerRole/generalpractitioner-guthrie-aaron"
+        },
+        "owner": {
+          "reference": "Organization/calwell-pathology"
+        },
+        "partOf": [
+          {
+            "reference": "urn:uuid:25fec2b6-a416-4311-b91d-9e82358ec7eb"
+          }
+        ],
+        "authoredOn": "2025-09-08T10:43:32.567143+10:00",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Task</h3><p><strong>Status:</strong> requested</p><p><strong>Intent:</strong> order</p></div>"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Task"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:77486b44-5491-49a1-8459-45768ccc4bd0",
+      "resource": {
+        "resourceType": "ServiceRequest",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-servicerequest-path"
+          ]
+        },
+        "contained": [
+          {
+            "resourceType": "Encounter",
+            "meta": {
+              "profile": [
+                "http://hl7.org.au/fhir/core/StructureDefinition/au-core-encounter"
+              ]
+            },
+            "id": "ccc2cb41-9606-4570-bdd9-378717bd1e5e",
+            "status": "planned",
+            "class": {
+              "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+              "code": "AMB",
+              "display": "ambulatory"
+            },
+            "subject": {
+              "reference": "Patient/bennelong-anne"
+            }
+          }
+        ],
+        "extension": [
+          {
+            "url": "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-displaysequence",
+            "valueInteger": 2
+          },
+          {
+            "url": "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-fastingprecondition",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "276330003",
+                  "display": "Non-fasting"
+                }
+              ]
+            }
+          },
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/request-statusReason",
+            "valueCodeableConcept": {
+              "text": "Broke tube in centrifuge"
+            }
+          }
+        ],
+        "id": "77486b44-5491-49a1-8459-45768ccc4bd0",
+        "identifier": [
+          {
+            "use": "usual",
+            "type": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                  "code": "PLAC",
+                  "display": "Placer Identifier"
+                }
+              ]
+            },
+            "system": "http://myclinic.example.org.au/identifier",
+            "value": "25-665172-2"
+          }
+        ],
+        "status": "on-hold",
+        "intent": "order",
+        "requisition": {
+          "use": "usual",
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                "code": "PGN",
+                "display": "Placer Group Number"
+              }
+            ]
+          },
+          "system": "http://myclinic.example.org.au/identifier",
+          "value": "25-665172"
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "108252007",
+                "display": "Laboratory procedure"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "166849007",
+              "display": "Serum fasting triglyceride measurement"
+            }
+          ],
+          "text": "Serum fasting triglyceride measurement"
+        },
+        "subject": {
+          "reference": "Patient/bennelong-anne"
+        },
+        "encounter": {
+          "reference": "#ccc2cb41-9606-4570-bdd9-378717bd1e5e",
+          "type": "Encounter"
+        },
+        "authoredOn": "2025-09-08T10:43:32.567188+10:00",
+        "priority": "routine",
+        "insurance": [
+          {
+            "reference": "urn:uuid:5ade17b1-d955-4079-93f3-1e03d5f6e3f1"
+          }
+        ],
+        "requester": {
+          "reference": "PractitionerRole/generalpractitioner-guthrie-aaron"
+        },
+        "performer": [
+          {
+            "reference": "Organization/calwell-pathology"
+          }
+        ],
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "170777000",
+                "display": "Diabetic annual review"
+              }
+            ]
+          }
+        ],
+        "supportingInfo": [
+          {
+            "reference": "urn:uuid:dbd6b4fd-64c6-4b03-879c-81f994ea1855",
+            "display": "Clinical Context"
+          }
+        ],
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>ServiceRequest</h3><p><strong>Status:</strong> on-hold</p><p><strong>Intent:</strong> order</p><p><strong>Test:</strong> Serum fasting triglyceride measurement</p><p><strong>Category:</strong> Laboratory procedure</p><p><strong>Sequence:</strong> 2</p><p><strong>Reasons:</strong> Diabetic annual review</p></div>"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "ServiceRequest"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:59371722-f5b6-477c-bf6c-9e05fb4d9739",
+      "resource": {
+        "resourceType": "Task",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-task-diagnosticrequest"
+          ],
+          "tag": [
+            {
+              "system": "http://terminology.hl7.org.au/CodeSystem/resource-tag",
+              "code": "fulfilment-task"
+            }
+          ]
+        },
+        "id": "59371722-f5b6-477c-bf6c-9e05fb4d9739",
+        "groupIdentifier": {
+          "use": "usual",
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                "code": "PGN",
+                "display": "Placer Group Number"
+              }
+            ]
+          },
+          "system": "http://myclinic.example.org.au/identifier",
+          "value": "25-665172"
+        },
+        "status": "requested",
+        "intent": "order",
+        "focus": {
+          "reference": "urn:uuid:77486b44-5491-49a1-8459-45768ccc4bd0"
+        },
+        "for": {
+          "reference": "Patient/bennelong-anne"
+        },
+        "requester": {
+          "reference": "PractitionerRole/generalpractitioner-guthrie-aaron"
+        },
+        "owner": {
+          "reference": "Organization/calwell-pathology"
+        },
+        "partOf": [
+          {
+            "reference": "urn:uuid:25fec2b6-a416-4311-b91d-9e82358ec7eb"
+          }
+        ],
+        "authoredOn": "2025-09-08T10:43:32.567220+10:00",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Task</h3><p><strong>Status:</strong> requested</p><p><strong>Intent:</strong> order</p></div>"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Task"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:25fec2b6-a416-4311-b91d-9e82358ec7eb",
+      "resource": {
+        "resourceType": "Task",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-task-group"
+          ],
+          "tag": [
+            {
+              "system": "http://terminology.hl7.org.au/CodeSystem/resource-tag",
+              "code": "fulfilment-task-group"
+            }
+          ]
+        },
+        "id": "25fec2b6-a416-4311-b91d-9e82358ec7eb",
+        "groupIdentifier": {
+          "use": "usual",
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                "code": "PGN",
+                "display": "Placer Group Number"
+              }
+            ]
+          },
+          "system": "http://myclinic.example.org.au/identifier",
+          "value": "25-665172"
+        },
+        "status": "requested",
+        "intent": "order",
+        "description": "Pathology Order Group",
+        "for": {
+          "reference": "Patient/bennelong-anne"
+        },
+        "requester": {
+          "reference": "PractitionerRole/generalpractitioner-guthrie-aaron"
+        },
+        "owner": {
+          "reference": "Organization/calwell-pathology"
+        },
+        "authoredOn": "2025-09-08T10:43:32.567249+10:00",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>Task</h3><p><strong>Status:</strong> requested</p><p><strong>Intent:</strong> order</p><p><strong>Description:</strong> Pathology Order Group</p></div>"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Task"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:756b5247-8ff1-41c6-ab9a-08a6e7679219",
+      "resource": {
+        "resourceType": "CommunicationRequest",
+        "meta": {
+          "profile": [
+            "http://hl7.org.au/fhir/ereq/StructureDefinition/au-erequesting-communicationrequest-copyto"
+          ]
+        },
+        "id": "756b5247-8ff1-41c6-ab9a-08a6e7679219",
+        "groupIdentifier": {
+          "use": "usual",
+          "type": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v2-0203",
+                "code": "PGN",
+                "display": "Placer Group Number"
+              }
+            ]
+          },
+          "system": "http://myclinic.example.org.au/identifier",
+          "value": "25-665172"
+        },
+        "status": "active",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/communication-category",
+                "code": "notification"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/bennelong-anne"
+        },
+        "about": [
+          {
+            "reference": "urn:uuid:92ade2d7-18ba-4ada-a614-f9972cfb8584"
+          },
+          {
+            "reference": "urn:uuid:77486b44-5491-49a1-8459-45768ccc4bd0"
+          }
+        ],
+        "requester": {
+          "reference": "PractitionerRole/generalpractitioner-guthrie-aaron"
+        },
+        "reasonCode": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org.au/CodeSystem/communicationrequest-reason",
+                "code": "copyto"
+              }
+            ]
+          }
+        ],
+        "recipient": [
+          {
+            "reference": "PractitionerRole/endocrinologist-cruickshank-bryce"
+          }
+        ],
+        "authoredOn": "2025-09-08T10:43:32.567285+10:00",
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h3>CommunicationRequest</h3><p><strong>Status:</strong> active</p><p>Request for communication regarding patient care.</p></div>"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "CommunicationRequest"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:74a30f64-1f4e-4f0e-88e5-eda7e9e67f89",
+      "request": {
+        "method": "GET",
+        "url": "PractitionerRole/endocrinologist-cruickshank-bryce"
+      }
+    }
+  ],
+  "timestamp": "2025-09-08T10:43:32.187956+10:00"
+}
